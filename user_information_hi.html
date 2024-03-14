@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>उपयोगकर्ता सूचना फ़ॉर्म</title>
+<style>
+/* बॉडी के लिए स्टाइल */
+body {
+    background-image: url('a5.jpg'); /* पृष्ठभूमि छवि */
+    background-size: cover; /* पूरे शरीर को ढकने के लिए */
+    background-position: center; /* पृष्ठभूमि छवि को केंद्र में */
+    margin: 0; /* डिफ़ॉल्ट शरीर की मार्जिन हटाएं */
+    padding: 0; /* डिफ़ॉल्ट शरीर का पैडिंग हटाएं */
+    font-family: Arial, sans-serif; /* एक वैकल्पिक फ़ॉन्ट परिवार सेट करें */
+}
+
+/* कंटेनर के लिए स्टाइल */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000000; /* कंटेनर के लिए पाठ का रंग */
+    background-color: rgba(222, 215, 215, 0.7); /* पारदर्शी सफेद पृष्ठभूमि */
+}
+
+/* फ़ॉर्म के लिए स्टाइल */
+.form-group {
+    display: inline-block;
+    width: calc(50% - 10px); /* दो इनपुट प्रति पंक्ति में समायोजित करने के लिए चौड़ाई समायोजित करें */
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: calc(100% - 10px); /* इनपुट क्षेत्रों को समायोजित करने के लिए चौड़ाई समायोजित करें */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    height: 40px;
+}
+
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>उपयोगकर्ता सूचना</h1>
+    <form id="userForm" action="#" method="post">
+        <div class="form-group">
+            <label for="name">नाम:</label>
+            <input type="text" id="name" name="name" placeholder="अपना नाम दर्ज करें" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">लिंग:</label>
+            <select id="gender" name="gender" required onchange="checkGender()">
+                <option value="">लिंग चुनें</option>
+                <option value="male">पुरुष</option>
+                <option value="female">महिला</option>
+                <option value="other">अन्य</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="age">आयु:</label>
+            <input type="number" id="age" name="age" placeholder="अपनी आयु दर्ज करें" required>
+        </div>
+        <div class="form-group">
+            <label for="marital-status">वैवाहिक स्थिति:</label>
+            <select id="marital-status" name="marital-status" required>
+                <option value="">वैवाहिक स्थिति चुनें</option>
+                <option value="single">अविवाहित</option>
+                <option value="married">विवाहित</option>
+                <option value="divorced">विवाहित (बिच्छूटे)</option>
+                <option value="widowed">विधवा / विधुर</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phone">फ़ोन नंबर:</label>
+            <input type="text" id="phone" name="phone" placeholder="अपना फ़ोन नंबर दर्ज करें" required>
+        </div>
+        <div class="form-group">
+            <label for="date">तारीख:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="form-group">
+            <label for="urbanRural">शहरी या ग्रामीण:</label>
+            <select id="urbanRural" name="urbanRural">
+                <option value="urban">शहरी</option>
+                <option value="rural">ग्रामीण</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="caste">जाति:</label>
+            <select id="caste" name="caste">
+                <option value="oc">ओसी (अन्य पिछड़ा वर्ग)</option>
+                <option value="sc">एससी (अनुसूचित जाति)</option>
+                <option value="mbc">एमबीसी (मोस्ट बैकवर्ड क्लास)</option>
+                <option value="bc">बीसी (बैकवर्ड क्लास)</option>
+                <option value="st">एसटी (अनुसूचित जनजाति)</option>
+                <option value="obc">ओबीसी (अन्य पिछड़ा वर्ग)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="differentlyAbled">विभिन्न रूप से अक्षम:</label>
+            <select id="differentlyAbled" name="differentlyAbled">
+                <option value="yes">हां</option>
+                <option value="no">नहीं</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="student">छात्र:</label>
+            <select id="student" name="student">
+                <option value="yes">हां</option>
+                <option value="no">नहीं</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="income">आय (INR):</label>
+            <input type="number" id="income" name="income" placeholder="अपनी आय दर्ज करें">
+        </div>
+        <div class="form-group" id="pregnantGroup" style="display:none;">
+            <label for="pregnant">क्या आप गर्भवती हैं?</label>
+            <select id="pregnant" name="pregnant">
+                <option value="yes">हां</option>
+                <option value="no">नहीं</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="जमा करें">
+        </div>
+    </form>
+</div>
+
+<script>
+function checkGender() {
+    var gender = document.getElementById("gender").value;
+    if (gender === "female") {
+        document.getElementById("pregnantGroup").style.display = "block";
+    } else {
+        document.getElementById("pregnantGroup").style.display = "none";
+    }
+}
+
+document.getElementById("userForm").addEventListener("submit", function(event) {
+  // Prevent the form from submitting normally
+  event.preventDefault();
+  // Submit the form or perform other actions here
+  // For demonstration purposes, I'm just logging the form data
+  var formData = new FormData(this);
+  for (var pair of formData.entries()) {
+    console.log(pair[0] + ': ' + pair[1]);
+  }
+});
+</script>
+</body>
+</html>

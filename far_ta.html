@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>விவசாயி தகவல் படிவம்</title>
+    <style>
+        body {
+            background-image: url('a5.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            height: 100vh; /* Make body height 100% of viewport height */
+            display: flex; /* Use flexbox for vertical and horizontal centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            color: #020202; /* Text color */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add opacity to the background color */
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>விவசாயி தகவல்</h1>
+        <form>
+            <label for="landArea">நில பரப்பு (சதுர அடி):</label>
+            <input type="number" id="landArea" name="landArea" placeholder="சதுர அடியில் நில பரப்பு உள்ளிடவும்">
+
+            <label for="farmerAge">விவசாயியின் வயது:</label>
+            <input type="number" id="farmerAge" name="farmerAge" placeholder="விவசாயியின் வயது உள்ளிடவும்">
+
+            <label for="farmerCaste">விவசாயியின் ஜாதி:</label>
+            <select id="farmerCaste" name="farmerCaste">
+                <option value="oc">OC</option>
+                <option value="mbc">MBC</option>
+                <option value="bc">BC</option>
+                <option value="st">SC</option>
+                <option value="etc">OTHERS</option>
+            </select>
+
+            <label for="damageCaution">நிலம் சேதமடைந்தது:</label>
+            <select id="damageCaution" name="damageCaution">
+                <option value="drought">கால்நடை அவதிப்பு</option>
+                <option value="flood">பொழிப்பு</option>
+                <option value="cyclone">புயல்</option>
+                <option value="others">மற்றவை</option>
+            </select>
+
+            <button type="submit">சமர்ப்பிக்கவும்</button>
+        </form>
+    </div>
+</body>
+</html>

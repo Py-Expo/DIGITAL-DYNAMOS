@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Information Form</title>
+<style>
+    body {
+    background-image: url('a5.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire body */
+    background-position: center; /* Center the background image */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    font-family: Arial, sans-serif; /* Set a fallback font family */
+}
+/* Styles for the container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000000; /* Text color for the container */
+    background-color: rgba(240, 227, 227, 0.7); /* Transparent white background */
+}
+
+/* Styles for the form */
+.form-group {
+    display: inline-block;
+    width: calc(50% - 10px); /* Adjust the width to fit two inputs per line */
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: calc(100% - 10px); /* Adjust the width to fit input fields */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    height: 40px;
+}
+
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>User Information</h1>
+    <form id="userForm" action="fe_en.html" method="GET" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required onchange="checkGender()">
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" required>
+        </div>
+        <div class="form-group">
+            <label for="marital-status">Marital Status:</label>
+            <select id="marital-status" name="marital-status" required>
+                <option value="">Select marital status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="form-group">
+            <label for="urbanRural">Urban or Rural:</label>
+            <select id="urbanRural" name="urbanRural">
+                <option value="urban">Urban</option>
+                <option value="rural">Rural</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="caste">Caste:</label>
+            <select id="caste" name="caste">
+                <option value="oc">OC</option>
+                <option value="sc">SC</option>
+                <option value="mbc">MBC</option>
+                <option value="bc">BC</option>
+                <option value="st">ST</option>
+                <option value="obc">OBC</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="differentlyAbled">Differently Abled:</label>
+            <select id="differentlyAbled" name="differentlyAbled">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="student">Student:</label>
+            <select id="student" name="student">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="income">Income (INR):</label>
+            <input type="number" id="income" name="income" placeholder="Enter your income">
+        </div>
+        <div class="form-group" id="pregnantGroup" style="display:none;">
+            <label for="pregnant">Are you pregnant?</label>
+            <select id="pregnant" name="pregnant">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="button" value="Submit" onclick="submitForm()">
+        </div>
+    </form>
+</div>
+
+<script>
+function checkGender() {
+    var gender = document.getElementById("gender").value;
+    if (gender === "female") {
+        document.getElementById("pregnantGroup").style.display = "block";
+    } else {
+        document.getElementById("pregnantGroup").style.display = "none";
+    }
+}
+
+function submitForm() {
+    var gender = document.getElementById("gender").value;
+    if (gender === "other") {
+        document.getElementById("userForm").action = "tr_en.html";
+    } else if (gender === "female") {
+        document.getElementById("userForm").action = "fe_en.html";
+    } else {
+        document.getElementById("userForm").action = "fe_en.html";
+        document.getElementById("pregnantGroup").style.display = "none";
+    }
+    document.getElementById("userForm").submit();
+}
+</script>
+</body>
+</html>

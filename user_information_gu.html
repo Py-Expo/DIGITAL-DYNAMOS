@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>વપરાશકર્તા માહિતી ફોર્મ</title>
+<style>
+/* Styles for the body */
+body {
+    background-image: url('a5.jpg'); /* બેકગ્રાઉન્ડ છબિ */
+    background-size: cover; /* પૂર્ણ બૉડી કવર કરો */
+    background-position: center; /* બેકગ્રાઉન્ડ છબિને કેન્ટર કરો */
+    margin: 0; /* ડિફોલ્ટ બોડી માર્જિન દૂર કરો */
+    padding: 0; /* ડિફોલ્ટ બોડી પેડિંગ દૂર કરો */
+    font-family: Arial, sans-serif; /* ફોન્ટ પરિવર્તન કરો */
+}
+
+/* Styles for the container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000000; /* કન્ટેનર માટે ટેક્સ્ટ રંગ */
+    background-color: rgba(222, 215, 215, 0.7); /* પારદર સફેદ બેકગ્રાઉન્ડ */
+}
+
+/* Styles for the form */
+.form-group {
+    display: inline-block;
+    width: calc(50% - 10px); /* દરેક લાઈનનો ચૌડાઈ માપણ */
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: calc(100% - 10px); /* ઇનપુટ ફિલ્ડ માટે ચાપ પૂર્ણ કરો */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    height: 40px;
+}
+
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>વપરાશકર્તા માહિતી</h1>
+    <form id="userForm" action="#" method="post">
+        <div class="form-group">
+            <label for="name">નામ:</label>
+            <input type="text" id="name" name="name" placeholder="તમારું નામ દાખલ કરો" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">જાતિ:</label>
+            <select id="gender" name="gender" required onchange="checkGender()">
+                <option value="">જાતિ પસંદ કરો</option>
+                <option value="male">પુરૂષ</option>
+                <option value="female">સ્ત્રી</option>
+                <option value="other">અન્ય</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="age">ઉંમર:</label>
+            <input type="number" id="age" name="age" placeholder="તમારી ઉંમર દાખલ કરો" required>
+        </div>
+        <div class="form-group">
+            <label for="marital-status">વૈવાહિક સ્થિતિ:</label>
+            <select id="marital-status" name="marital-status" required>
+                <option value="">વૈવાહિક સ્થિતિ પસંદ કરો</option>
+                <option value="single">એકલ</option>
+                <option value="married">વિવાહિત</option>
+                <option value="divorced">તલાકશુદા</option>
+                <option value="widowed">વિધવા</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phone">ફોન નંબર:</label>
+            <input type="text" id="phone" name="phone" placeholder="તમારો ફોન નંબર દાખલ કરો" required>
+        </div>
+        <div class="form-group">
+            <label for="date">તારીખ:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="form-group">
+            <label for="urbanRural">શહેરી કે ગ્રામીણ:</label>
+            <select id="urbanRural" name="urbanRural">
+                <option value="urban">શહેરી</option>
+                <option value="rural">ગ્રામીણ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="caste">જાત:</label>
+            <select id="caste" name="caste">
+                <option value="oc">ઓસી</option>
+                <option value="sc">એસસી</option>
+                <option value="mbc">એમબીસી</option>
+                <option value="bc">બીસી</option>
+                <option value="st">એસટી</option>
+                <option value="obc">ઓબીસી</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="differentlyAbled">વિવિધ ક્ષમતાવાળા:</label>
+            <select id="differentlyAbled" name="differentlyAbled">
+                <option value="yes">હા</option>
+                <option value="no">ના</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="student">વિદ્યાર્થી:</label>
+            <select id="student" name="student">
+                <option value="yes">હા</option>
+                <option value="no">ના</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="income">આવક (INR):</label>
+            <input type="number" id="income" name="income" placeholder="તમારો આવક દાખલ કરો">
+        </div>
+        <div class="form-group" id="pregnantGroup" style="display:none;">
+            <label for="pregnant">શ્રીમંત છો કે નહિ:</label>
+            <select id="pregnant" name="pregnant">
+                <option value="yes">હા</option>
+                <option value="no">ના</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="સબમિટ">
+        </div>
+    </form>
+</div>
+
+<script>
+function checkGender() {
+    var gender = document.getElementById("gender").value;
+    if (gender === "female") {
+        document.getElementById("pregnantGroup").style.display = "block";
+    } else {
+        document.getElementById("pregnantGroup").style.display = "none";
+    }
+}
+
+document.getElementById("userForm").addEventListener("submit", function(event) {
+  // ફોર્મને સામાન્ય રીતે સબમિટ કરવાની રોકો
+  event.preventDefault();
+  // ફોર્મ સબમિટ કરો અથવા અન્ય ક્રિયાઓ કરો
+  // ડેમો ઉદાહરણ તરીકે, હું ફક્ત ફોર્મ માહિતીને લોગ કરું છું
+  var formData = new FormData(this);
+  for (var pair of formData.entries()) {
+    console.log(pair[0] + ': ' + pair[1]);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Language Selection</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+  background-image: url('a4.jpeg');
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  height: 100vh; /* Make body height 100% of viewport height */
+  display: flex; /* Use flexbox for vertical and horizontal centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+
+.container {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  padding: 2px; /* Add some padding */
+  margin-bottom: 2px; /* Add margin at the bottom */
+}
+
+.language-selection {
+  text-align: center; /* Center buttons */
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome</h1>
+    <p>Please select your language:</p>
+    <div class="language-selection">
+        <button onclick="selectLanguage('english')">English</button>
+        <button onclick="selectLanguage('tamil')">தமிழ்</button>
+        <button onclick="selectLanguage('gujarathi')">ગુજરાતી</button>
+        <button onclick="selectLanguage('hindi')">हिंदी</button>
+    </div>
+</div>
+
+<script>
+function selectLanguage(language) {
+    if (language === 'english') {
+        window.location.href = "s1_en.html";
+    } else if (language === 'tamil') {
+        window.location.href = "s1_ta.html";
+    } else if (language === 'gujarathi') {
+        window.location.href = "s1_gu.html";
+    } else if (language === 'hindi') {
+        window.location.href = "s1_hi.html";
+    }
+}
+</script>
+</body>
+</html>

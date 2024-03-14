@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ta"> <!-- Change language to Tamil -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>சலுகை தேர்வு</title> <!-- Change title to Tamil -->
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+  background-image: url('a4.jpeg');
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  height: 100vh; /* Make body height 100% of viewport height */
+  display: flex; /* Use flexbox for vertical and horizontal centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+
+.container {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  padding: 2px; /* Add some padding */
+  margin-bottom: 2px; /* Add margin at the bottom */
+}
+
+.language-selection {
+  text-align: center; /* Center buttons */
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>வணக்கம்</h1> <!-- Change welcome text to Tamil -->
+    <p>உங்கள் சலுகையை தேர்ந்தெடுக்கவும்:</p> <!-- Change category selection prompt to Tamil -->
+    <div class="language-selection">
+        <button onclick="selectCategory('farmers')">விவசாயிகள்</button> <!-- Change button text to Tamil -->
+        <button onclick="selectCategory('medical')">மருத்துவ</button> <!-- Change button text to Tamil -->
+        <button onclick="selectCategory('general')">பொது</button> <!-- Change button text to Tamil -->
+    </div>
+</div>
+
+<script>
+function selectCategory(category) {
+    if (category === 'farmers') {
+        window.location.href = "far_ta.html";
+    } else if (category === 'medical') {
+        window.location.href = "med_ta.html"; 
+    } else if (category === 'general') {
+        window.location.href = "user_information_ta.html"; <!-- Change redirection link to Tamil -->
+    }
+}
+</script>
+</body>
+</html>

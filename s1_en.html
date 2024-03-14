@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Category Selection</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+  background-image: url('a4.jpeg');
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  height: 100vh; /* Make body height 100% of viewport height */
+  display: flex; /* Use flexbox for vertical and horizontal centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+
+.container {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  padding: 2px; /* Add some padding */
+  margin-bottom: 2px; /* Add margin at the bottom */
+}
+
+.language-selection {
+  text-align: center; /* Center buttons */
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome</h1>
+    <p>Please select your category:</p>
+    <div class="language-selection">
+        <button onclick="selectCategory('farmers')">Farmers</button>
+        <button onclick="selectCategory('medical')">Medical</button>
+        <button onclick="selectCategory('general')">General</button>
+    </div>
+</div>
+
+<script>
+function selectCategory(category) {
+    if (category === 'farmers') {
+        window.location.href = "far_en.html";
+    } else if (category === 'medical') {
+        window.location.href = "med_en.html";
+    } else if (category === 'general') {
+        window.location.href = "user_information_en.html";
+    }
+}
+</script>
+</body>
+</html>

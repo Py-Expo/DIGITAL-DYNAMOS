@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ખેડૂતની માહિતી ફોર્મ</title>
+    <style>
+        body {
+            background-image: url('a5.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0; /* ડિફોલ્ટ શરીર માર્જિન દૂર કરો */
+            padding: 0; /* ડિફોલ્ટ શરીર પેડિંગ દૂર કરો */
+            height: 100vh; /* શરીરની ઊંચાઇને વિયુવર્ટ ઊંચાઇને 100% બનાવો */
+            display: flex; /* ઊંચાઇનું અને ચોડીનું કેન્દ્રિત કરવા માટે ફ્લેક્સબોક્સનો ઉપયોગ કરો */
+            justify-content: center; /* ચોડીને કેન્દ્રિત કરો */
+            align-items: center; /* ઊંચાઇને કેન્દ્રિત કરો */
+            color: #020202; /* ટેક્સ્ટ રંગ */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* બેકગ્રાઉન્ડ રંગની ટ્રાન્સપેરન્ટ સેપારેશન ઉમેરો */
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ખેડૂતની માહિતી</h1>
+        <form action="sche_far_gu.html" method="GET">
+            <label for="landArea">જમીનનું વિસ્તાર (વર્ગ ફુટ):</label>
+            <input type="number" id="landArea" name="landArea" placeholder="જમીનનું વિસ્તાર ટાઇપ કરો">
+
+            <label for="farmerAge">ખેડૂતની ઉંમર:</label>
+            <input type="number" id="farmerAge" name="farmerAge" placeholder="ખેડૂતની ઉંમર ટાઇપ કરો">
+
+            <label for="farmerCaste">ખેડૂતનું જાતિ:</label>
+            <select id="farmerCaste" name="farmerCaste">
+                <option value="oc">OC</option>
+                <option value="mbc">MBC</option>
+                <option value="bc">BC</option>
+                <option value="st">ST</option>
+                <option value="etc">અન્ય</option>
+            </select>
+
+            <label for="damageCaution">જમીન કસ્ટમાઈઝ્ડ થયું:</label>
+            <select id="damageCaution" name="damageCaution">
+                <option value="drought">મળણી</option>
+                <option value="flood">સાઇક્લોન</option>
+                <option value="cyclone">વરસાદ</option>
+                <option value="others">અન્ય</option>
+            </select>
+
+            <button type="submit">સબમિટ</button>
+        </form>
+    </div>
+</body>
+</html>
+

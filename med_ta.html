@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>மருத்துவ திட்டம் படிவம்</title>
+    <style>
+        body {
+            background-image: url('a5.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            height: 100vh; /* Make body height 100% of viewport height */
+            display: flex; /* Use flexbox for vertical and horizontal centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            color: #020202; /* Text color */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>மருத்துவ திட்டம் படிவம்</h1>
+        <form>
+            <label for="age">வயது:</label>
+            <input type="number" id="age" name="age" placeholder="உங்கள் வயதை உள்ளிடவும்" required>
+
+            <label for="govEmployee">அரசு ஊழியர்:</label>
+            <select id="govEmployee" name="govEmployee" required>
+                <option value="">தேர்வு செய்யவும்</option>
+                <option value="yes">ஆம்</option>
+                <option value="no">இல்லை</option>
+            </select>
+
+            <label for="bpl">கீழ்நோக்கு மட்டமானது (BPL):</label>
+            <select id="bpl" name="bpl" required>
+                <option value="">தேர்வு செய்யவும்</option>
+                <option value="yes">ஆம்</option>
+                <option value="no">இல்லை</option>
+            </select>
+
+            <label for="caste">ஜாதி:</label>
+            <select id="caste" name="caste" required>
+                <option value="">தேர்வு செய்யவும்</option>
+                <option value="general">பொது</option>
+                <option value="obc">மற்றவர் குடும்பம்</option>
+                <option value="sc">மேல்நோக்கு</option>
+                <option value="st">கீழ்நோக்கு</option>
+                <option value="other">மற்றவை</option>
+            </select>
+
+            <label for="income">வருமானம் (INR):</label>
+            <input type="number" id="income" name="income" placeholder="உங்கள் வருமானத்தை உள்ளிடவும்" required>
+
+            <button type="submit">சமர்ப்பிக்கவும்</button>
+        </form>
+    </div>
+</body>
+</html>
